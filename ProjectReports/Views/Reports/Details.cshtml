@@ -1,0 +1,74 @@
+﻿@model ProjectReports.Models.Reports
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reports</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChangeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChangeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IncidentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncidentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentIncident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentIncident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionToken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActionToken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActionTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

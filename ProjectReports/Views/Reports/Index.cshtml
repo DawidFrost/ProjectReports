@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjectReports.Models.Reports>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IncidentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentIncident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionToken)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChangeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IncidentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentIncident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionToken)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
