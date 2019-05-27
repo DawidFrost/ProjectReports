@@ -146,7 +146,7 @@ namespace ProjectReports.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -162,8 +162,9 @@ namespace ProjectReports.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Potwierdź konto", "Potwierdź konto, klikając <a href=\"" + callbackUrl + "\">tutaj</a>");
-                    TempData["UserId"] = user.Id;
-                    return RedirectToAction("Create", "Workers");
+                
+                   
+                    return RedirectToAction("Create", "Workers",new { UserId = user.Id });
                 }
                 AddErrors(result);
             }

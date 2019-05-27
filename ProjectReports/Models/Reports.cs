@@ -10,7 +10,7 @@ namespace ProjectReports.Models
     {
         public int ID { get; set; }
 
-        public int ChangeID { get; set; }
+        public int ShiftID { get; set; }
 
         [Required]
         [StringLength(11)]

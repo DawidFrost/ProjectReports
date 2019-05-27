@@ -49,6 +49,7 @@ namespace ProjectReports.Controllers
                                                      };
 
             ViewBag.Workers = new SelectList(workersDDL, "Value", "Text");
+
             return View();
         }
 
@@ -61,9 +62,11 @@ namespace ProjectReports.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                shifts.Date = DateTime.Now;
                 db.Shifts.Add(shifts);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","Reports", new { ShiftID = shifts.ID });
             }
 
             return View(shifts);

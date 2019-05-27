@@ -36,9 +36,11 @@ namespace ProjectReports.Controllers
         }
 
         // GET: Reports/Create
-        public ActionResult Create()
+        public ActionResult Create(int ShiftID)
         {
-            return View();
+            Reports reports = new Reports();
+            reports.ShiftID = ShiftID;
+            return View(reports);
         }
 
         // POST: Reports/Create
@@ -46,7 +48,7 @@ namespace ProjectReports.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ChangeID,IncidentNumber,ContentIncident,ActionToken,DeviceNumber,DeviceName,ActionTime")] Reports reports)
+        public ActionResult Create([Bind(Include = "ID,ShiftID,IncidentNumber,ContentIncident,ActionToken,DeviceNumber,DeviceName,ActionTime")] Reports reports)
         {
             if (ModelState.IsValid)
             {

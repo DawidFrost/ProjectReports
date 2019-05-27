@@ -1,5 +1,6 @@
 namespace ProjectReports.Models
 {
+    using ProjektRaport.Validators;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -11,15 +12,18 @@ namespace ProjectReports.Models
         public int Id { get; set; }
 
         [Required]
+        [FirstCharIsBig]
         [StringLength(20)]
         public string FirstName { get; set; }
 
         [Required]
+        [FirstCharIsBig]
         [StringLength(20)]
         public string LastName { get; set; }
 
-        [Required]
+        [Required]  
         [StringLength(128)]
+        
         public string UserId { get; set; }
     }
 }

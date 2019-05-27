@@ -18,7 +18,10 @@ namespace ProjectReports.Models
         [StringLength(11)]
         public string TimeRange { get; set; }
 
-        [Column(TypeName = "date")]
+
+        [Column(TypeName = "Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
     }
 }

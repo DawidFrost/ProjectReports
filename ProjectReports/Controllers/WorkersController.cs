@@ -36,11 +36,14 @@ namespace ProjectReports.Controllers
         }
 
         // GET: Workers/Create
-        public ActionResult Create()
+        
+        public ActionResult Create(String UserId)
         {
-            Workers worker = new Workers();
-            worker.UserId = TempData["UserId"].ToString();
-            return View(worker);
+            
+            Workers workers = new Workers();
+            workers.UserId = UserId;
+
+            return View(workers);
         }
 
         // POST: Workers/Create
@@ -48,7 +51,7 @@ namespace ProjectReports.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Workers workers)
+        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,UserID")] Workers workers)
         {
             if (ModelState.IsValid)
             {
